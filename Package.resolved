@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AtomicSwift",
+        "repositoryURL": "https://github.com/MarioIannotta/AtomicSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "e2913c6e873bc60237dd138ba0db9b109016dd80",
+          "version": "1.2.1"
+        }
+      },
+      {
+        "package": "DNSCore",
+        "repositoryURL": "https://github.com/DoubleNode/DNSCore.git",
+        "state": {
+          "branch": null,
+          "revision": "b3ee4810f3564d4eb25ed1a2c11f47893307b162",
+          "version": "1.0.12"
+        }
+      },
+      {
+        "package": "DNSCoreThreading",
+        "repositoryURL": "https://github.com/DoubleNode/DNSCoreThreading.git",
+        "state": {
+          "branch": null,
+          "revision": "66d5e01881d1d822789051fa79332a5e0ffd93b8",
+          "version": "1.0.3"
+        }
+      },
+      {
+        "package": "DNSDataObjects",
+        "repositoryURL": "https://github.com/DoubleNode/DNSDataObjects.git",
+        "state": {
+          "branch": null,
+          "revision": "7f92557f55a40056a1225bd46c1b8c8e3402fbd1",
+          "version": "1.0.1"
+        }
+      },
+      {
+        "package": "DNSProtocols",
+        "repositoryURL": "https://github.com/DoubleNode/DNSProtocols.git",
+        "state": {
+          "branch": null,
+          "revision": "354d422a2c90dc2617ceb438aed244c71ec215d5",
+          "version": "1.0.11"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
