@@ -9,6 +9,7 @@
 import DNSBlankWorkers
 import DNSCore
 import DNSProtocols
+import Foundation
 
 public protocol DNSAppConfiguratorProtocol {
     // MARK: - UIWindowSceneDelegate methods
@@ -34,6 +35,8 @@ public protocol DNSAppConfiguratorProtocol {
 open class DNSAppConfigurator: DNSAppConfiguratorProtocol {
     public var workers: [WKRBlankBaseWorker] = []
 
+    public required init() { }
+    
     // MARK: - UIWindowSceneDelegate methods
 
     // Called when the scene has moved from an inactive state to an active state.
