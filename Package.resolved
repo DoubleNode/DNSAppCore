@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "DNSBlankWorkers",
+        "repositoryURL": "https://github.com/DoubleNode/DNSBlankWorkers.git",
+        "state": {
+          "branch": null,
+          "revision": "0117e45110e481b6aa2deb859ca66d80c09d1e0b",
+          "version": "1.0.15"
+        }
+      },
+      {
         "package": "DNSCore",
         "repositoryURL": "https://github.com/DoubleNode/DNSCore.git",
         "state": {
@@ -33,8 +42,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSDataObjects.git",
         "state": {
           "branch": null,
-          "revision": "7f92557f55a40056a1225bd46c1b8c8e3402fbd1",
-          "version": "1.0.1"
+          "revision": "5f58ceaf24d9f2197555b2d8683e3f7bb232ec38",
+          "version": "1.0.2"
         }
       },
       {
@@ -42,8 +51,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSProtocols.git",
         "state": {
           "branch": null,
-          "revision": "354d422a2c90dc2617ceb438aed244c71ec215d5",
-          "version": "1.0.11"
+          "revision": "d0d07fbabb5633f62667388aa48acb5e80ad11e4",
+          "version": "1.0.12"
         }
       }
     ]

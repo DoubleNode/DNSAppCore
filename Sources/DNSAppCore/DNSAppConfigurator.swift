@@ -6,7 +6,9 @@
 //  Copyright © 2019 - 2016 Darren Ehlers and DoubleNode, LLC. All rights reserved.
 //
 
+import DNSBlankWorkers
 import DNSCore
+import DNSProtocols
 
 public protocol DNSAppConfiguratorProtocol {
     // MARK: - UIWindowSceneDelegate methods
@@ -27,4 +29,43 @@ public protocol DNSAppConfiguratorProtocol {
     // Use this method to save data, release shared resources, and store enough scene-specific state information
     // to restore the scene back to its current state.
     func didEnterBackground()
+}
+
+open class DNSAppConfigurator: DNSAppConfiguratorProtocol {
+    public var workers: [WKRBlankBaseWorker] = []
+
+    // MARK: - UIWindowSceneDelegate methods
+
+    // Called when the scene has moved from an inactive state to an active state.
+    // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+    open func didBecomeActive() {
+        workers.forEach { (worker) in
+            worker.didBecomeActive()
+        }
+    }
+
+    // Called when the scene will move from an active state to an inactive state.
+    // This may occur due to temporary interruptions (ex. an incoming phone call).
+    open func willResignActive() {
+        workers.forEach { (worker) in
+            worker.willResignActive()
+        }
+    }
+
+    // Called as the scene transitions from the background to the foreground.
+    // Use this method to undo the changes made on entering the background.
+    open func willEnterForeground() {
+        workers.forEach { (worker) in
+            worker.willEnterForeground()
+        }
+    }
+
+    // Called as the scene transitions from the foreground to the background.
+    // Use this method to save data, release shared resources, and store enough scene-specific state information
+    // to restore the scene back to its current state.
+    open func didEnterBackground() {
+        workers.forEach { (worker) in
+            worker.didEnterBackground()
+        }
+    }
 }
