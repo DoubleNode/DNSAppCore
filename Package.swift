@@ -19,6 +19,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
+        .package(url: "https://github.com/DoubleNode/DNSBlankSystems.git", from: "1.0.0"),
         .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.0.0"),
     ],
     targets: [
@@ -27,7 +28,7 @@ let package = Package(
         .target(
             name: "DNSAppCore",
             dependencies: [
-                "DNSBlankWorkers",
+                "DNSBlankWorkers", "DNSBlankSystems",
         ]),
         .testTarget(
             name: "DNSAppCoreTests",

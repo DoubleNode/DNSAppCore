@@ -6,6 +6,7 @@
 //  Copyright © 2019 - 2016 Darren Ehlers and DoubleNode, LLC. All rights reserved.
 //
 
+import DNSBlankSystems
 import DNSBlankWorkers
 import DNSCore
 import DNSProtocols
@@ -33,6 +34,7 @@ public protocol DNSAppConfiguratorProtocol {
 }
 
 open class DNSAppConfigurator: DNSAppConfiguratorProtocol {
+    public var systems: [SYSBlankBaseSystem] = []
     public var workers: [WKRBlankBaseWorker] = []
 
     public required init() { }
@@ -42,6 +44,9 @@ open class DNSAppConfigurator: DNSAppConfiguratorProtocol {
     // Called when the scene has moved from an inactive state to an active state.
     // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
     open func didBecomeActive() {
+        systems.forEach { (system) in
+            system.didBecomeActive()
+        }
         workers.forEach { (worker) in
             worker.didBecomeActive()
         }
@@ -50,6 +55,9 @@ open class DNSAppConfigurator: DNSAppConfiguratorProtocol {
     // Called when the scene will move from an active state to an inactive state.
     // This may occur due to temporary interruptions (ex. an incoming phone call).
     open func willResignActive() {
+        systems.forEach { (system) in
+            system.willResignActive()
+        }
         workers.forEach { (worker) in
             worker.willResignActive()
         }
@@ -58,6 +66,9 @@ open class DNSAppConfigurator: DNSAppConfiguratorProtocol {
     // Called as the scene transitions from the background to the foreground.
     // Use this method to undo the changes made on entering the background.
     open func willEnterForeground() {
+        systems.forEach { (system) in
+            system.willEnterForeground()
+        }
         workers.forEach { (worker) in
             worker.willEnterForeground()
         }
@@ -67,6 +78,9 @@ open class DNSAppConfigurator: DNSAppConfiguratorProtocol {
     // Use this method to save data, release shared resources, and store enough scene-specific state information
     // to restore the scene back to its current state.
     open func didEnterBackground() {
+        systems.forEach { (system) in
+            system.didEnterBackground()
+        }
         workers.forEach { (worker) in
             worker.didEnterBackground()
         }
