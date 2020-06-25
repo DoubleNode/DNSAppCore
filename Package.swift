@@ -1,5 +1,11 @@
-// swift-tools-version:5.1
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version:5.3
+//
+//  Package.swift
+//  DoubleNode Swift Framework (DNSFramework) - DNSAppCore
+//
+//  Created by Darren Ehlers.
+//  Copyright © 2020 - 2016 DoubleNode.com. All rights reserved.
+//
 
 import PackageDescription
 
@@ -19,8 +25,8 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/DoubleNode/DNSBlankSystems.git", from: "1.0.0"),
-        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.0.0"),
+        .package(url: "https://github.com/DoubleNode/DNSBlankSystems.git", from: "1.1.0"),
+        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.1.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -32,6 +38,8 @@ let package = Package(
         ]),
         .testTarget(
             name: "DNSAppCoreTests",
-            dependencies: ["DNSAppCore"]),
-    ]
+            dependencies: ["DNSAppCore"],
+            resources: [.copy("Constants.plist")]),
+    ],
+    swiftLanguageVersions: [.v5]
 )
