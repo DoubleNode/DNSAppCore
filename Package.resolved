@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSBlankSystems.git",
         "state": {
           "branch": null,
-          "revision": "fb5de2d24b89e2299b666cab9de5626313741630",
-          "version": "1.1.0"
+          "revision": "e3967a10b942d89a2f340a02b8bd27a789b94ec5",
+          "version": "1.1.1"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSBlankWorkers.git",
         "state": {
           "branch": null,
-          "revision": "1eac5a58b7d1ffaf45736acf609b680a55b63752",
-          "version": "1.1.0"
+          "revision": "f4245b37622fafe95ee2f33d4d69b1be5e50e3a0",
+          "version": "1.1.1"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSCore.git",
         "state": {
           "branch": null,
-          "revision": "9d22a97f98089b760e581a888ecba59e8e5e3a82",
-          "version": "1.1.1"
+          "revision": "1e5122a859a7e367dd35a93410f8f12c93618d12",
+          "version": "1.1.2"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSCoreThreading.git",
         "state": {
           "branch": null,
-          "revision": "5bf391d08597400c8603e73a4e5bdfa87ff8e1df",
-          "version": "1.1.0"
+          "revision": "4868b8878253c119a83c61b0186904bbb3d29728",
+          "version": "1.1.1"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSDataObjects.git",
         "state": {
           "branch": null,
-          "revision": "add289a6073149e2d6c84308d7abd916431ba447",
-          "version": "1.1.0"
+          "revision": "2e49fed9b30698398f58768e150ba4ec7234916b",
+          "version": "1.1.1"
         }
       },
       {
@@ -60,8 +60,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSProtocols.git",
         "state": {
           "branch": null,
-          "revision": "9b82354e125f2b464de320ff537a16dd7a4de51f",
-          "version": "1.1.0"
+          "revision": "16cf6dac7a5fedbd363b1f5313f0f5c0c518b243",
+          "version": "1.1.1"
         }
       },
       {
