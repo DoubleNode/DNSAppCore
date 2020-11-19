@@ -6,17 +6,18 @@
 //  Copyright © 2020 - 2016 DoubleNode.com. All rights reserved.
 //
 
+import DNSCrashWorkers
 import DNSCore
 import DNSProtocols
 import Foundation
 
 open class DNSAppGlobals {
-    static let shared   = DNSAppGlobals()
+    public static let shared = DNSAppGlobals()
 
     public var appDidCrashLastRun: Bool = false
-    public var appReviewWorker: PTCLAppReview_Protocol?
+    public var appReviewWorker: PTCLAppReview_Protocol = WKRCrashAppReviewWorker()
 
-    var askedDeviceForPushNotifications: Bool = false
+    public var askedDeviceForPushNotifications: Bool = false
 
     public class func checkAndAskForReview() -> Bool {
         return self.shared.checkAndAskForReview()
@@ -48,29 +49,29 @@ open class DNSAppGlobals {
 
     // MARK: - Review methods
 
-    func checkAndAskForReview() -> Bool {
-        guard appReviewWorker != nil else { return false }
+    open func checkAndAskForReview() -> Bool {
+        appReviewWorker.launchedCount = DNSCore
+            .appSetting(for: C.AppGlobals.launchedCount,
+                        withDefault: 0) as! UInt
+        appReviewWorker.launchedFirstTime = DNSCore
+            .appSetting(for: C.AppGlobals.launchedFirstTime,
+                        withDefault: Date()) as! Date
+        appReviewWorker.launchedLastTime = DNSCore
+            .appSetting(for: C.AppGlobals.launchedLastTime,
+                        withDefault: Date(timeIntervalSince1970: 0)) as? Date
+        appReviewWorker.reviewRequestLastTime = DNSCore
+            .appSetting(for: C.AppGlobals.reviewRequestLastTime,
+                        withDefault: Date(timeIntervalSince1970: 0)) as? Date
 
-        // swiftlint:disable force_cast
-        appReviewWorker!.launchedCount = DNSCore.appSetting(for: C.AppGlobals.launchedCount,
-                                                            withDefault: 0) as! UInt
-        appReviewWorker!.launchedFirstTime = DNSCore.appSetting(for: C.AppGlobals.launchedFirstTime,
-                                                                withDefault: Date()) as! Date
-        appReviewWorker!.launchedLastTime = DNSCore.appSetting(for: C.AppGlobals.launchedLastTime,
-                                                               withDefault: Date(timeIntervalSince1970: 0)) as? Date
-        appReviewWorker!.reviewRequestLastTime = DNSCore.appSetting(for: C.AppGlobals.reviewRequestLastTime,
-                                                                    withDefault: Date(timeIntervalSince1970: 0)) as? Date
-        // swiftlint:enable force_cast
-
-        appReviewWorker!.appDidCrashLastRun = appDidCrashLastRun
-        appReviewWorker!.daysUntilPrompt = Int(DNSAppConstants.requestReviewDaysSinceFirstLaunch)
-        appReviewWorker!.usesUntilPrompt = Int(DNSAppConstants.requestReviewFirstMinimumLaunches)
-        appReviewWorker!.daysBeforeReminding = Int(DNSAppConstants.requestReviewDaysSinceLastReview)
+        appReviewWorker.appDidCrashLastRun = appDidCrashLastRun
+        appReviewWorker.daysUntilPrompt = Int(DNSAppConstants.requestReviewDaysSinceFirstLaunch)
+        appReviewWorker.usesUntilPrompt = Int(DNSAppConstants.requestReviewFirstMinimumLaunches)
+        appReviewWorker.daysBeforeReminding = Int(DNSAppConstants.requestReviewDaysSinceLastReview)
 
         var reviewed = false
 
         do {
-            reviewed = try appReviewWorker!.doReview()
+            reviewed = try appReviewWorker.doReview()
             if reviewed {
                 _ = DNSCore.appSetting(set: C.AppGlobals.reviewRequestLastTime, with: Date())
             }

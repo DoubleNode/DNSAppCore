@@ -2,12 +2,21 @@
   "object": {
     "pins": [
       {
-        "package": "AtomicSwift",
-        "repositoryURL": "https://github.com/MarioIannotta/AtomicSwift.git",
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
           "branch": null,
-          "revision": "e2913c6e873bc60237dd138ba0db9b109016dd80",
-          "version": "1.2.1"
+          "revision": "9e0328127dfb801cefe8ac53a13c0c90a7770448",
+          "version": "5.4.0"
+        }
+      },
+      {
+        "package": "AtomicSwift",
+        "repositoryURL": "https://github.com/DoubleNodeOpen/AtomicSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "58fbeed795715d9c8dd7bb7ae1c36f37f2827089",
+          "version": "1.2.2"
         }
       },
       {
@@ -15,8 +24,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSBlankSystems.git",
         "state": {
           "branch": null,
-          "revision": "e3967a10b942d89a2f340a02b8bd27a789b94ec5",
-          "version": "1.1.1"
+          "revision": "956e16a18dd3582ce725b022e6197660917ef596",
+          "version": "1.2.2"
         }
       },
       {
@@ -24,8 +33,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSBlankWorkers.git",
         "state": {
           "branch": null,
-          "revision": "f4245b37622fafe95ee2f33d4d69b1be5e50e3a0",
-          "version": "1.1.1"
+          "revision": "faf41af900f9c1d90b6cf5a5ea51eb9c3199753a",
+          "version": "1.2.9"
         }
       },
       {
@@ -33,8 +42,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSCore.git",
         "state": {
           "branch": null,
-          "revision": "1e5122a859a7e367dd35a93410f8f12c93618d12",
-          "version": "1.1.2"
+          "revision": "ac3ba31368604f24bb66e45b5ae6b7634ccbdf78",
+          "version": "1.2.67"
         }
       },
       {
@@ -42,8 +51,26 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSCoreThreading.git",
         "state": {
           "branch": null,
-          "revision": "4868b8878253c119a83c61b0186904bbb3d29728",
-          "version": "1.1.1"
+          "revision": "c781049b43854080188112d1a05f70d4de2e0fc9",
+          "version": "1.2.1"
+        }
+      },
+      {
+        "package": "DNSCrashSystems",
+        "repositoryURL": "https://github.com/DoubleNode/DNSCrashSystems.git",
+        "state": {
+          "branch": null,
+          "revision": "c57d92caeaf72cd110162968e0faa11f6bea177f",
+          "version": "1.2.0"
+        }
+      },
+      {
+        "package": "DNSCrashWorkers",
+        "repositoryURL": "https://github.com/DoubleNode/DNSCrashWorkers.git",
+        "state": {
+          "branch": null,
+          "revision": "d0316d29b4e0a7e0b89af61ded944491a1767e38",
+          "version": "1.2.6"
         }
       },
       {
@@ -51,8 +78,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSDataObjects.git",
         "state": {
           "branch": null,
-          "revision": "2e49fed9b30698398f58768e150ba4ec7234916b",
-          "version": "1.1.1"
+          "revision": "c357585b7b2c27396b859f08e3809d7d42cb794f",
+          "version": "1.2.9"
         }
       },
       {
@@ -60,8 +87,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSProtocols.git",
         "state": {
           "branch": null,
-          "revision": "16cf6dac7a5fedbd363b1f5313f0f5c0c518b243",
-          "version": "1.1.1"
+          "revision": "ba068b08620a4403eeef61bd62ffdfc03e65924f",
+          "version": "1.2.17"
         }
       },
       {
@@ -69,8 +96,8 @@
         "repositoryURL": "https://github.com/Nirma/SFSymbol",
         "state": {
           "branch": null,
-          "revision": "5eba1ce4fc19b2f5aca2208b5927c544e0e89963",
-          "version": "0.2.0"
+          "revision": "01bda7aadcedd27fdd599e1370c7989e8d746b85",
+          "version": "0.5.1"
         }
       },
       {
@@ -78,8 +105,8 @@
         "repositoryURL": "https://github.com/SwiftyBeaver/SwiftyBeaver.git",
         "state": {
           "branch": null,
-          "revision": "e0fb3a74cb993d7dcf1e56734cdc98ad6e6d8176",
-          "version": "1.9.1"
+          "revision": "2c513a2e8fbfbd6495afc4a05941d8e3fdba68e9",
+          "version": "1.9.3"
         }
       }
     ]
