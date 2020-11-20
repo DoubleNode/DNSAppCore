@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSCore.git",
         "state": {
           "branch": null,
-          "revision": "37721a2b5ff31eeb87620bc24f0386893773417d",
-          "version": "1.2.71"
+          "revision": "244ad8db2fb8d527aa2d8945ea89fd8de64e9ac1",
+          "version": "1.2.73"
         }
       },
       {
