@@ -69,14 +69,12 @@ open class DNSAppGlobals {
         appReviewWorker.daysBeforeReminding = DNSAppConstants.requestReviewDaysSinceLastReview
 
         var reviewed = false
-        if DNSAppConstants.requestReviews {
-            do {
-                reviewed = try appReviewWorker.doReview()
-                if reviewed {
-                    _ = DNSCore.appSetting(set: C.AppGlobals.reviewRequestLastTime, with: Date())
-                }
-            } catch {
+        do {
+            reviewed = try appReviewWorker.doReview()
+            if reviewed {
+                _ = DNSCore.appSetting(set: C.AppGlobals.reviewRequestLastTime, with: Date())
             }
+        } catch {
         }
         return reviewed
     }
