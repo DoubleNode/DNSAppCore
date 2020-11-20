@@ -64,20 +64,20 @@ open class DNSAppGlobals {
                         withDefault: Date(timeIntervalSince1970: 0)) as? Date
 
         appReviewWorker.appDidCrashLastRun = appDidCrashLastRun
-        appReviewWorker.daysUntilPrompt = Int(DNSAppConstants.requestReviewDaysSinceFirstLaunch)
-        appReviewWorker.usesUntilPrompt = Int(DNSAppConstants.requestReviewFirstMinimumLaunches)
-        appReviewWorker.daysBeforeReminding = Int(DNSAppConstants.requestReviewDaysSinceLastReview)
+        appReviewWorker.daysUntilPrompt = DNSAppConstants.shared.requestReviewDaysSinceFirstLaunch()
+        appReviewWorker.usesUntilPrompt = DNSAppConstants.shared.requestReviewFirstMinimumLaunches()
+        appReviewWorker.daysBeforeReminding = DNSAppConstants.shared.requestReviewDaysSinceLastReview()
 
         var reviewed = false
-
-        do {
-            reviewed = try appReviewWorker.doReview()
-            if reviewed {
-                _ = DNSCore.appSetting(set: C.AppGlobals.reviewRequestLastTime, with: Date())
+        if DNSAppConstants.shared.requestReviews() {
+            do {
+                reviewed = try appReviewWorker.doReview()
+                if reviewed {
+                    _ = DNSCore.appSetting(set: C.AppGlobals.reviewRequestLastTime, with: Date())
+                }
+            } catch {
             }
-        } catch {
         }
-
         return reviewed
     }
 }
