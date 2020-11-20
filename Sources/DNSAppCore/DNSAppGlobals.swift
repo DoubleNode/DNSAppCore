@@ -50,6 +50,7 @@ open class DNSAppGlobals {
     // MARK: - Review methods
 
     open func checkAndAskForReview() -> Bool {
+        appReviewWorker.appDidCrashLastRun = appDidCrashLastRun
         appReviewWorker.launchedCount = DNSCore
             .appSetting(for: C.AppGlobals.launchedCount,
                         withDefault: 0) as! UInt
@@ -62,11 +63,6 @@ open class DNSAppGlobals {
         appReviewWorker.reviewRequestLastTime = DNSCore
             .appSetting(for: C.AppGlobals.reviewRequestLastTime,
                         withDefault: Date(timeIntervalSince1970: 0)) as? Date
-
-        appReviewWorker.appDidCrashLastRun = appDidCrashLastRun
-        appReviewWorker.daysUntilPrompt = DNSAppConstants.requestReviewDaysSinceFirstLaunch
-        appReviewWorker.usesUntilPrompt = DNSAppConstants.requestReviewFirstMinimumLaunches
-        appReviewWorker.daysBeforeReminding = DNSAppConstants.requestReviewDaysSinceLastReview
 
         var reviewed = false
         do {
