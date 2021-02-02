@@ -34,8 +34,8 @@ public protocol DNSAppConfiguratorProtocol {
 }
 
 open class DNSAppConfigurator: DNSAppConfiguratorProtocol {
-    public var systems: [SYSBlankBaseSystem] = []
-    public var workers: [WKRBlankBaseWorker] = []
+    public var systems: [PTCLBase_SystemProtocol] = []
+    public var workers: [PTCLBase_Protocol] = []
 
     public required init() { }
     
