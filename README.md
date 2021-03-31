@@ -40,12 +40,12 @@ dependencies: [
 
 ## Dependencies
 
--   DNSBlankSystems v1.2.0+
--   DNSBlankWorkers v1.2.0+
--   DNSCore v1.2.0+
--   DNSCrashWorkers v1.2.0+
--   DNSError v1.2.0+
--   DNSProtocols v1.2.0+
+-   DNSBlankSystems v1.4.3+
+-   DNSBlankWorkers v1.4.7+
+-   DNSCore v1.4.12+
+-   DNSCrashWorkers v1.4.6+
+-   DNSError v1.4.2+
+-   DNSProtocols v1.4.16+
 
 ## Credits
 
