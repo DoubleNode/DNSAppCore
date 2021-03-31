@@ -30,7 +30,7 @@ let package = Package(
         .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.4.7"),
         .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.4.12"),
         .package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", from: "1.4.6"),
-        .package(url: "https://github.com/DoubleNode/DNSError.git", from: "1.4.2"),
+        .package(url: "https://github.com/DoubleNode/DNSError.git", from: "1.4.3"),
         .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.4.16"),
     ],
     targets: [

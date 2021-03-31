@@ -21,6 +21,19 @@ open class DNSAppGlobals {
 
     public var askedDeviceForPushNotifications: Bool = false
 
+    public class func appLastDisplayedErrorString() -> String {
+        guard let dnsError = appLastDisplayedError else {
+            return "<NONE>"
+        }
+        guard let nsError = dnsError.nsError else {
+            return "<NSErrorInvalid>"
+        }
+        let userInfo = nsError.userInfo
+        var retval = dnsError.errorString
+        retval += " [Timestamp: \(userInfo["DNSTimeStamp"] ?? "<NONE>")]"
+        retval += " {Failure: \(dnsError.failureReason ?? "<NONE>")}"
+        return retval
+    }
     public class func checkAndAskForReview() -> Bool {
         return self.shared.checkAndAskForReview()
     }
