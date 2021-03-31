@@ -13,13 +13,13 @@ import DNSProtocols
 import Foundation
 
 open class DNSAppGlobals {
+    public static var appLastDisplayedError: DNSError?
     public static let shared = DNSAppGlobals()
 
     public var appDidCrashLastRun: Bool = false
     public var appReviewWorker: PTCLAppReview_Protocol = WKRCrashAppReviewWorker()
 
     public var askedDeviceForPushNotifications: Bool = false
-    public var appLastDisplayedError: DNSError?
 
     public class func checkAndAskForReview() -> Bool {
         return self.shared.checkAndAskForReview()
