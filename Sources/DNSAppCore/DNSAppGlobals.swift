@@ -12,9 +12,12 @@ import DNSError
 import DNSProtocols
 import Foundation
 
+public protocol DNSAppGlobals_Protocol {
+    static var shared: DNSAppGlobals { get }
+    static func checkAndAskForReview() -> Bool
+}
 open class DNSAppGlobals {
     public static var appLastDisplayedError: DNSError?
-    public static let shared = DNSAppGlobals()
 
     public var appDidCrashLastRun: Bool = false
     public var appReviewWorker: PTCLAppReview_Protocol = WKRCrashAppReviewWorker()
@@ -34,14 +37,9 @@ open class DNSAppGlobals {
         retval += " {Failure: \(dnsError.failureReason ?? "<NONE>")}"
         return retval
     }
-    public class func checkAndAskForReview() -> Bool {
-        return self.shared.checkAndAskForReview()
-    }
-
     required public init() {
         commonInit()
     }
-
     open func commonInit() {
         let launchedCount       = 1 + (DNSCore.appSetting(for: C.AppGlobals.launchedCount,
                                                           withDefault: 0) as? UInt ?? 0)
