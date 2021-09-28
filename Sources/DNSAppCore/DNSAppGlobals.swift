@@ -12,7 +12,7 @@ import DNSError
 import DNSProtocols
 import Foundation
 
-public protocol DNSAppGlobals_Protocol {
+public protocol DNSAppGlobalsProtocol {
     static var shared: DNSAppGlobals { get }
     static func checkAndAskForReview() -> Bool
 }
@@ -20,7 +20,7 @@ open class DNSAppGlobals {
     public static var appLastDisplayedError: DNSError?
 
     public var appDidCrashLastRun: Bool = false
-    public var appReviewWorker: PTCLAppReview_Protocol = WKRCrashAppReviewWorker()
+    public var appReviewWorker: PTCLAppReview = WKRCrashAppReviewWorker()
 
     public var askedDeviceForPushNotifications: Bool = false
 
@@ -28,11 +28,11 @@ open class DNSAppGlobals {
         guard let dnsError = appLastDisplayedError else {
             return "<NONE>"
         }
-        guard let nsError = dnsError.nsError else {
+        guard let nsError = dnsError as NSError? else {
             return "<NSErrorInvalid>"
         }
         let userInfo = nsError.userInfo
-        var retval = dnsError.errorString
+        var retval = dnsError.errorDescription ?? ""
         retval += " [Timestamp: \(userInfo["DNSTimeStamp"] ?? "<NONE>")]"
         retval += " {Failure: \(dnsError.failureReason ?? "<NONE>")}"
         return retval
