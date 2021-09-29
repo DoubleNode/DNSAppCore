@@ -17,7 +17,7 @@ public protocol DNSAppGlobalsProtocol {
     static func checkAndAskForReview() -> Bool
 }
 open class DNSAppGlobals {
-    public static var appLastDisplayedError: DNSError?
+    public static var appLastDisplayedError: Error?
 
     public var appDidCrashLastRun: Bool = false
     public var appReviewWorker: PTCLAppReview = WKRCrashAppReviewWorker()
@@ -25,16 +25,19 @@ open class DNSAppGlobals {
     public var askedDeviceForPushNotifications: Bool = false
 
     public class func appLastDisplayedErrorString() -> String {
-        guard let dnsError = appLastDisplayedError else {
+        guard let error = appLastDisplayedError else {
             return "<NONE>"
         }
-        guard let nsError = dnsError as NSError? else {
+        guard let nsError = error as NSError? else {
             return "<NSErrorInvalid>"
         }
         let userInfo = nsError.userInfo
-        var retval = dnsError.errorDescription ?? ""
+        var retval = error.localizedDescription
         retval += " [Timestamp: \(userInfo["DNSTimeStamp"] ?? "<NONE>")]"
-        retval += " {Failure: \(dnsError.failureReason ?? "<NONE>")}"
+        guard let error = error as? LocalizedError else {
+            return retval
+        }
+        retval += " {Failure: \(error.failureReason ?? "<NONE>")}"
         return retval
     }
     required public init() {
