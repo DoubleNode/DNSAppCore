@@ -34,10 +34,10 @@ open class DNSAppGlobals {
         let userInfo = nsError.userInfo
         var retval = error.localizedDescription
         retval += " [Timestamp: \(userInfo["DNSTimeStamp"] ?? "<NONE>")]"
-        guard let error = error as? LocalizedError else {
+        guard let localError = error as? LocalizedError else {
             return retval
         }
-        retval += " {Failure: \(error.failureReason ?? "<NONE>")}"
+        retval += " {Failure: \(localError.failureReason ?? "<NONE>")}"
         return retval
     }
     required public init() {
