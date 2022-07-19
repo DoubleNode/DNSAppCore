@@ -20,7 +20,7 @@ open class DNSAppGlobals {
     public static var appLastDisplayedError: Error?
 
     public var appDidCrashLastRun: Bool = false
-    public var appReviewWorker: PTCLAppReview = WKRCrashAppReviewWorker()
+    public var appReviewWorker: WKRPTCLAppReview = WKRCrashAppReviewWorker()
 
     public var askedDeviceForPushNotifications: Bool = false
 
@@ -44,12 +44,12 @@ open class DNSAppGlobals {
         commonInit()
     }
     open func commonInit() {
-        let launchedCount       = 1 + (DNSCore.appSetting(for: C.AppGlobals.launchedCount,
-                                                          withDefault: 0) as? UInt ?? 0)
-        let launchedFirstTime   = DNSCore.appSetting(for: C.AppGlobals.launchedFirstTime,
-                                                     withDefault: Date()) as? Date ?? Date()
-        let launchedLastTime    = DNSCore.appSetting(for: C.AppGlobals.launchedLastTime,
-                                                     withDefault: Date(timeIntervalSince1970: 0)) as? Date
+        let launchedCount = 1 + (DNSCore.appSetting(for: C.AppGlobals.launchedCount,
+                                                    withDefault: 0) as? UInt ?? 0)
+        let launchedFirstTime = DNSCore.appSetting(for: C.AppGlobals.launchedFirstTime,
+                                                   withDefault: Date()) as? Date ?? Date()
+        let launchedLastTime = DNSCore.appSetting(for: C.AppGlobals.launchedLastTime,
+                                                  withDefault: Date(timeIntervalSince1970: 0)) as? Date
 
         _ = DNSCore.appSetting(set: C.AppGlobals.launchedCount, with: launchedCount)
         _ = DNSCore.appSetting(set: C.AppGlobals.launchedFirstTime, with: launchedFirstTime)
@@ -57,14 +57,10 @@ open class DNSAppGlobals {
     }
 
     // MARK: - Application methods
-
-    open func applicationDidBecomeActive() {
-    }
-    open func applicationWillResignActive() {
-    }
+    open func applicationDidBecomeActive() { }
+    open func applicationWillResignActive() { }
 
     // MARK: - Review methods
-
     open func checkAndAskForReview() -> Bool {
         appReviewWorker.appDidCrashLastRun = appDidCrashLastRun
         appReviewWorker.launchedCount = DNSCore
@@ -86,8 +82,7 @@ open class DNSAppGlobals {
             if reviewed {
                 _ = DNSCore.appSetting(set: C.AppGlobals.reviewRequestLastTime, with: Date())
             }
-        } catch {
-        }
+        } catch { }
         return reviewed
     }
 }
