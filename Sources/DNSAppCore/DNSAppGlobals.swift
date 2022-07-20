@@ -18,6 +18,10 @@ public protocol DNSAppGlobalsProtocol {
 }
 open class DNSAppGlobals {
     public static var appLastDisplayedError: Error?
+    public static var debugStartupString: String = ""
+    public static var dynamicLinkUrlString: String = ""
+    public static var shouldForceLogout: Bool = false
+    public static var isRunningTest: Bool = false
 
     public var appDidCrashLastRun: Bool = false
     public var appReviewWorker: WKRPTCLAppReview = WKRCrashAppReviewWorker()
