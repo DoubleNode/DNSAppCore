@@ -80,13 +80,11 @@ open class DNSAppGlobals {
             .appSetting(for: C.AppGlobals.reviewRequestLastTime,
                         withDefault: Date(timeIntervalSince1970: 0)) as? Date
 
-        var reviewed = false
-        do {
-            reviewed = try appReviewWorker.doReview()
-            if reviewed {
-                _ = DNSCore.appSetting(set: C.AppGlobals.reviewRequestLastTime, with: Date())
-            }
-        } catch { }
-        return reviewed
+        let result = appReviewWorker.doReview()
+        if case .failure = result {
+            return false
+        }
+        _ = DNSCore.appSetting(set: C.AppGlobals.reviewRequestLastTime, with: Date())
+        return true
     }
 }
