@@ -24,7 +24,7 @@ open class DNSAppGlobals {
     public static var isRunningTest: Bool = false
 
     public var appDidCrashLastRun: Bool = false
-    public var appReviewWorker: WKRPTCLAppReview = WKRCrashAppReviewWorker()
+    public var wkrAppReview: WKRPTCLAppReview = WKRCrashAppReviewWorker()
 
     public var askedDeviceForPushNotifications: Bool = false
 
@@ -66,21 +66,21 @@ open class DNSAppGlobals {
 
     // MARK: - Review methods
     open func checkAndAskForReview() -> Bool {
-        appReviewWorker.appDidCrashLastRun = appDidCrashLastRun
-        appReviewWorker.launchedCount = DNSCore
+        wkrAppReview.appDidCrashLastRun = appDidCrashLastRun
+        wkrAppReview.launchedCount = DNSCore
             .appSetting(for: C.AppGlobals.launchedCount,
                         withDefault: 0) as! UInt
-        appReviewWorker.launchedFirstTime = DNSCore
+        wkrAppReview.launchedFirstTime = DNSCore
             .appSetting(for: C.AppGlobals.launchedFirstTime,
                         withDefault: Date()) as! Date
-        appReviewWorker.launchedLastTime = DNSCore
+        wkrAppReview.launchedLastTime = DNSCore
             .appSetting(for: C.AppGlobals.launchedLastTime,
                         withDefault: Date(timeIntervalSince1970: 0)) as? Date
-        appReviewWorker.reviewRequestLastTime = DNSCore
+        wkrAppReview.reviewRequestLastTime = DNSCore
             .appSetting(for: C.AppGlobals.reviewRequestLastTime,
                         withDefault: Date(timeIntervalSince1970: 0)) as? Date
 
-        let result = appReviewWorker.doReview()
+        let result = wkrAppReview.doReview()
         if case .failure = result {
             return false
         }
