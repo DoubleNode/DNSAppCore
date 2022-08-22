@@ -24,7 +24,7 @@ open class DNSAppGlobals {
     public static var isRunningTest: Bool = false
 
     public var appDidCrashLastRun: Bool = false
-    public var wkrAppReview: WKRPTCLAppReview = WKRCrashAppReviewWorker()
+    public var wkrAppReview: WKRPTCLAppReview = WKRCrashAppReview()
 
     public var askedDeviceForPushNotifications: Bool = false
 
