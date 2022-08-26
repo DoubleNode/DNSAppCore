@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSBlankWorkers.git",
         "state": {
           "branch": null,
-          "revision": "e44815e75ce537f0849171736e39e334917eda86",
-          "version": "1.9.57"
+          "revision": "240af1a768abe217ad601532da9d71ad97a7ad25",
+          "version": "1.9.65"
         }
       },
       {
@@ -60,8 +60,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSCore.git",
         "state": {
           "branch": null,
-          "revision": "3ed22d178c8b87b22bcdfd1cc56bc8ca66067812",
-          "version": "1.9.26"
+          "revision": "ea6340794e19beb3a166aa4565f8698e2285b5a0",
+          "version": "1.9.34"
         }
       },
       {
@@ -87,8 +87,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSCrashWorkers.git",
         "state": {
           "branch": null,
-          "revision": "7d928979cae30723230110a28f971028756e80a2",
-          "version": "1.9.44"
+          "revision": "96df56c091d864b6abf1caa8c0e22823320b196c",
+          "version": "1.9.49"
         }
       },
       {
@@ -96,8 +96,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSDataObjects.git",
         "state": {
           "branch": null,
-          "revision": "b6de0346a5ded63f97535f3c3b6f19ddb60e64ce",
-          "version": "1.9.36"
+          "revision": "884b0ff6c2d20072b596453f1b30aafb899c14ec",
+          "version": "1.9.41"
         }
       },
       {
@@ -105,8 +105,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSError.git",
         "state": {
           "branch": null,
-          "revision": "69d99c9f46c35b65764ba7dc85c2a206e1b1e665",
-          "version": "1.9.1"
+          "revision": "db7e75d714b953dd3081f834606118521b0c31c7",
+          "version": "1.9.2"
         }
       },
       {
@@ -114,8 +114,8 @@
         "repositoryURL": "https://github.com/DoubleNode/DNSProtocols.git",
         "state": {
           "branch": null,
-          "revision": "e5a387ce4cc8acde97b1fd5812cafdd7b5acb4c7",
-          "version": "1.9.82"
+          "revision": "f987aff0fe0d295d4d857194eaab9324e1d30809",
+          "version": "1.9.91"
         }
       },
       {
