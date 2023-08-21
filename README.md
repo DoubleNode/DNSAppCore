@@ -20,9 +20,9 @@ DNSAppCore is a collection of base App classes used for the DNSFramework
 
 ## Requirements
 
--   iOS 13.0+ / macOS 10.15+ / tvOS 13.0+ / watchOS 6.0+
--   Xcode 11.6+
--   Swift 5.1+
+-   iOS 16.0+ / macOS 13.3+ / tvOS 16.4+ / watchOS 9.4+
+-   Xcode 14.3.1+
+-   Swift 5.8+
 
 ## Installation
 
@@ -34,18 +34,18 @@ Once you have your Swift package set up, adding Alamofire as a dependency is as 
 
 ```swift
 dependencies: [
-.package(url: "https://github.com/DoubleNode/DNSAppCore.git", from: "1.10.2")
+.package(url: "https://github.com/DoubleNode/DNSAppCore.git", from: "1.11.0")
 ]
 ```
 
 ## Dependencies
 
--   DNSBlankSystems v1.10.0+
--   DNSBlankWorkers v1.10.20+
--   DNSCore v1.10.5+
--   DNSCrashWorkers v1.10.14+
--   DNSError v1.10.0+
--   DNSProtocols v1.10.27+
+-   DNSBlankSystems v1.11.0+
+-   DNSBlankWorkers v1.11.0+
+-   DNSCore v1.11.0+
+-   DNSCrashWorkers v1.11.0+
+-   DNSError v1.11.0+
+-   DNSProtocols v1.11.0+
 
 ## Credits
 
