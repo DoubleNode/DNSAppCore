@@ -17,18 +17,18 @@ public protocol DNSAppGlobalsProtocol {
     static func checkAndAskForReview() -> Bool
 }
 open class DNSAppGlobals {
-    public static var appLastDisplayedError: Error?
-    public static var debugStartupString: String = ""
-    public static var dynamicLinkUrlString: String = ""
-    public static var shouldForceLogout: Bool = false
-    public static var isRunningTest: Bool = false
+    @MainActor public static var appLastDisplayedError: (any Error)?
+    @MainActor public static var debugStartupString: String = ""
+    @MainActor public static var dynamicLinkUrlString: String = ""
+    @MainActor public static var shouldForceLogout: Bool = false
+    @MainActor public static var isRunningTest: Bool = false
 
     public var appDidCrashLastRun: Bool = false
-    public var wkrAppReview: WKRPTCLAppReview = WKRCrashAppReview()
+    public var wkrAppReview: any WKRPTCLAppReview = WKRCrashAppReview()
 
     public var askedDeviceForPushNotifications: Bool = false
 
-    public class func appLastDisplayedErrorString() -> String {
+    @MainActor public class func appLastDisplayedErrorString() -> String {
         guard let error = appLastDisplayedError else {
             return "<NONE>"
         }
@@ -38,7 +38,7 @@ open class DNSAppGlobals {
         let userInfo = nsError.userInfo
         var retval = error.localizedDescription
         retval += " [Timestamp: \(userInfo["DNSTimeStamp"] ?? "<NONE>")]"
-        guard let localError = error as? LocalizedError else {
+        guard let localError = error as? (any LocalizedError) else {
             return retval
         }
         retval += " {Failure: \(localError.failureReason ?? "<NONE>")}"

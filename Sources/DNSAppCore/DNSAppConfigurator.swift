@@ -33,9 +33,9 @@ public protocol DNSAppConfiguratorProtocol {
     func didEnterBackground()
 }
 
-open class DNSAppConfigurator: DNSAppConfiguratorProtocol {
-    public var systems: [SYSPTCLSystemBase] = []
-    public var workers: [WKRPTCLWorkerBase] = []
+open class DNSAppConfigurator: DNSAppConfiguratorProtocol, @unchecked Sendable {
+    public var systems: [any SYSPTCLSystemBase] = []
+    public var workers: [any WKRPTCLWorkerBase] = []
 
     public required init() { }
     

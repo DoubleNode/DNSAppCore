@@ -10,14 +10,11 @@ import XCTest
 @testable import DNSAppCore
 
 final class DNSAppCoreTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        //XCTAssertEqual(DNSBaseStage().text, "Hello, World!")
+    func testModuleImport() {
+        XCTAssertTrue(true, "DNSAppCore module should import successfully")
     }
 
-    static var allTests = [
-        ("testExample", testExample),
+    static let allTests = [
+        ("testModuleImport", testModuleImport),
     ]
 }
